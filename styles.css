@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -10,108 +9,101 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #000000; /* Changed to solid black */
+    background: linear-gradient(135deg, #d4cffa, #a3bffa); 
+    font-family: 'Poppins', sans-serif;
+}
+
+.calculator-container {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque glassmorphism */
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .calculator {
-    background: linear-gradient(135deg, #ffffff, #f0f4f8);
-    border-radius: 20px;
+    width: 320px;
+    background: #f8f7f5; 
+    border-radius: 15px;
     padding: 20px;
-    width: 450px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .display {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #f5f7fa, #e4e7eb);
-    border: 1px solid #d1d5db;
-    border-radius: 10px;
+    background: linear-gradient(145deg, #e6e9f0, #d6deff); 
     padding: 15px;
-    font-size: 28px;
+    border-radius: 10px;
     margin-bottom: 15px;
-    height: 60px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.display .reset-icon {
-    font-size: 20px;
-    color: #6b7280;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.display .reset-icon:hover {
-    color: #3b82f6;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .display .value {
     font-size: 28px;
-    color: #1f2937;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     font-weight: 500;
+    color: #2d2d2d; 
+}
+
+.display .reset-icon {
+    cursor: pointer;
+    font-size: 22px;
+    color: #ff6b81; 
+    transition: transform 0.3s ease;
+}
+
+.display .reset-icon:hover {
+    transform: rotate(180deg);
 }
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 button {
-    padding: 12px;
-    font-size: 18px;
-    border: none;
-    border-radius: 12px;
-    background-color: #e5e7eb;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-size: 20px;
     font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #d1d5db;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+button.number {
+    background: linear-gradient(145deg, #f5f5e9, #e8e8d5); 
+    color: #4a4a4a;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-button:active {
-    transform: scale(0.95);
+button.number:hover {
+    background: linear-gradient(145deg, #e0d7ff, #d4cffa); 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.function {
-    background-color: #d1d5db;
+button.operation {
+    background: linear-gradient(145deg, #a3bffa, #c3dafe); 
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.number {
-    background-color: #f3f4f6;
+button.operation:hover {
+    background: linear-gradient(145deg, #c3dafe, #a3bffa); 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.operation {
-    background-color: #e5e7eb;
+button.equals {
+    background: linear-gradient(145deg, #c3a7ff, #d4cffa); 
+    color: #fff;
 }
-.equals {
-    background-color: #3b82f6;
-    color: white;
-}
-.equals:hover {
-    background-color: #2563eb;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+button.equals:hover {
+    background: linear-gradient(145deg, #d4cffa, #c3a7ff); 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
