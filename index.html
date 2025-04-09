@@ -72,6 +72,8 @@
                         currentInput = currentInput.replace('÷', '/')
                                                    .replace('×', '*')
                                                    .replace('−', '-');
+
+                        // Calculate the result
                         currentInput = eval(currentInput).toString();
                     } catch (error) {
                         currentInput = 'Error';
@@ -80,6 +82,7 @@
                     return;
                 }
 
+                // Add the value to the current input
                 currentInput += value;
                 updateDisplay();
             });
