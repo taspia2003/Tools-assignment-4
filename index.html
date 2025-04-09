@@ -68,6 +68,10 @@
 
                 if (value === '=') {
                     try {
+                        // Replace non-JavaScript operators with their JavaScript equivalents
+                        currentInput = currentInput.replace('÷', '/')
+                                                   .replace('×', '*')
+                                                   .replace('−', '-');
                         currentInput = eval(currentInput).toString();
                     } catch (error) {
                         currentInput = 'Error';
